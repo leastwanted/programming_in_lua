@@ -215,7 +215,6 @@ if p then printpath(p) end
 function Dijkstra(a, b)
     local queue = { a }
     local visited = { [a] = 0 }
-    -- table.sort(queue, function(nodeA, nodeB) return codeA.distance < nodeB.distance end)
 
     while #queue > 0 do
         table.sort(queue, function(nodeA, nodeB) return visited[nodeA] < visited[nodeB] end)
