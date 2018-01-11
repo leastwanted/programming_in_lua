@@ -79,7 +79,7 @@ print(f(2))
 --]]
 
 
---[[
+---[[
 -- 9.4: Using our system for geometric regions, draw a waxing crescent moon as see from the northern Hemisphere
 
 function disk (cx, cy, r)
