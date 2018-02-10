@@ -1,3 +1,5 @@
+-- Chapter 16. Compilation, Execution, and Errors
+
 ---[[
 -- 16.1: Frequently, it is useful to add some prefix to a chunk of code when loading it. (We saw an example previously in this chapter, where we prefixed a return to an expression being loaded.) Write a function loadwithprefix that works like load, except that it adds its extra first argument (a string) as a prefix to the chunk being loaded.
 
@@ -20,6 +22,8 @@ function loadwithprefix(chunk, prefix)
         return load(prefix .. chunk)
     end
 end
+
+print("--- 16.1 ---")
 
 a = loadwithprefix("1", "return ")()
 print(a)
@@ -56,6 +60,8 @@ function multiload( ... )
     end
     return load(read)
 end
+
+print("\n--- 16.2 ---")
 
 f = multiload("local x = 10;", io.lines("lib16.lua", "*L"), " print(x)")
 f()
@@ -110,6 +116,8 @@ function make_stringrep(n)
     return load(table.concat(t, "\n"))
 end
 
+print("\n--- 16.3 ---")
+
 n = 99999999
 f = make_stringrep(n)
 do
@@ -131,6 +139,8 @@ end
 -- 16.4: Can you find any value for f such that the call pcall(pcall, f) returns false as its first result? Why is this relevant?
 
 -- Answer from https://stackoverflow.com/questions/39113323/how-do-i-find-an-f-that-makes-pcallpcall-f-return-false-in-lua
+
+print("\n--- 16.4 ---")
 
 status, err = pcall(pcall, (function() end)())
 print(status, err)
