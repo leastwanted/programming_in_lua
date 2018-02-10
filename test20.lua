@@ -51,6 +51,8 @@ mt.__mul = Set.intersection
 mt.__tostring = Set.tostring
 mt.__sub = Set.sub
 
+print("--- 20.1 ---")
+
 local aSet = Set.new{1, 2, 3}
 local bSet = Set.new{3, 4}
 print(aSet + bSet)
@@ -72,6 +74,8 @@ function Set.len(set)
 end
 
 mt.__len = Set.len
+
+print("\n--- 20.2 ---")
 
 print(#aSet)
 print(#(aSet + bSet))
@@ -98,6 +102,8 @@ function readOnly(t)
     setmetatable(proxy, mt)
     return proxy
 end
+
+print("\n--- 20.3 ---")
 
 days = readOnly{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
 print(days[1])
@@ -130,6 +136,8 @@ function fileAsArray(filename)
     setmetatable(proxy, mt)
     return proxy
 end
+
+print("\n--- 20.4 ---")
 
 t = fileAsArray('test20.bytes')
 for i = 1, 20 do
@@ -185,6 +193,8 @@ function fileAsArray(filename)
     setmetatable(proxy, mt)
     return proxy
 end
+
+print("\n--- 20.5 ---")
 
 t = fileAsArray('test20.bytes')
 
