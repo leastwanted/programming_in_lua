@@ -1,3 +1,5 @@
+-- Chapter 18. Iterators and the Generic for
+
 ---[[
 -- 18.1: Write an iterator fromto such that the next loop becomes equivalent to a numeric for:
 
@@ -29,6 +31,8 @@ function fromto(n, m)
     return iter, m, n-1
 end
 
+print("--- 18.1 ---")
+
 for i in fromto(3, 8) do
     print(i)
 end
@@ -58,6 +62,8 @@ function fromto(n, m, step)
     step = step or 1
     return iter, {n=n, m=m, step=step}, nil
 end
+
+print("\n--- 18.2 ---")
 
 for i in fromto(3, 8, 2) do
     print(i)
@@ -93,6 +99,8 @@ function allwords ()
     end
 end
 
+print("\n--- 18.3 ---")
+
 io.input(io.open("test18.lua", "r"))
 for w in allwords() do
     print(w)
@@ -119,6 +127,8 @@ function allsubstring(s)
         return s:sub(start, pos)
     end
 end
+
+print("\n--- 18.4 ---")
 
 for w in allsubstring("abc") do
     print(w)
@@ -147,6 +157,8 @@ end
 function print_subset(t)
     print("{" .. table.concat(t, ", ") .. "}")
 end
+
+print("\n--- 18.5 ---")
 
 allsubsets({"a", "b", "c"}, print_subset)
 
