@@ -1,4 +1,6 @@
+-- Chapter 9. Closures
 
+---[[
 -- 9.1: Write a function integral that takes a function f and returns an approximation of it integral.
 
 function integral (f, delta)
@@ -14,13 +16,14 @@ end
 
 fi = integral(function (x) return x end)
 
+print('--- 9.1 ---')
 print(fi(0, 1))
 print(fi(0, 2))
 
 --]]
 
 
---[[
+---[[
 -- 9.2: What will be the output of the following chunk:
 
 function F(x)
@@ -29,6 +32,8 @@ function F(x)
         get = function () return x end
     }
 end
+
+print('\n--- 9.2 ---')
 
 o1 = F(10)
 o2 = F(20)
@@ -43,7 +48,7 @@ print(o1.get(), o2.get())
 --]]
 
 
---[[
+---[[
 -- 9.3: rewrite 5.4
 
 a = {0, 1, 1, 1, 1}
@@ -69,6 +74,8 @@ function newpoly(coes)
         return res
     end
 end
+
+print('\n--- 9.3 ---')
 
 print(calc_poly(a, 2))
 
@@ -137,6 +144,8 @@ function plot (r, M, N)
     end
 end
 
+
+print('\n--- 9.4 ---')
 -- io.output(io.open("test9.txt", "w"))
 c1 = disk(0, 0, 1)
 plot(difference(c1, translate(c1, 0.3, 0)), 100, 100)
@@ -146,7 +155,7 @@ plot(difference(c1, translate(c1, 0.3, 0)), 100, 100)
 --]]
 
 
---[[
+---[[
 -- 9.5: In our system for geometric regions, add a function to rotate a given region by a given angle.
 
 function rotate (r, angle, cx, cy)
@@ -163,6 +172,7 @@ function rotate (r, angle, cx, cy)
     end
 end
 
+print('\n--- 9.5 ---')
 plot(rotate(difference(c1, translate(c1, 0.3, 0)), 90), 100, 100)
 
 --]]
