@@ -1,3 +1,5 @@
+-- Chapter 14. Data Structures
+
 -- [[[
 -- 14.1: Write a function to add two sparse matrices.
 
@@ -40,6 +42,7 @@ local b = {
     {6, 3, -1}
 }
 
+print("--- 14.1 ---")
 local c = add_matrices(a, b)
 print_matrice(c, 3)
 
@@ -90,6 +93,8 @@ function popLast (list)
     reset(list)
     return value
 end
+
+print("\n--- 14.2 ---")
 
 local aList = listNew()
 pushFirst(aList, 1)
@@ -194,6 +199,8 @@ function printpath (path)
     end
 end
 
+print("\n--- 14.3 ---")
+
 g = readgraph(io.open("test14.graph", "rb"))
 a = name2node(g, "a")
 b = name2node(g, "g")
@@ -247,6 +254,8 @@ function Dijkstra(a, b)
     end
     return path
 end
+
+print("\n--- 14.4 ---")
 
 g = readgraph2(io.open("test14.graph", "rb"))
 a = name2node(g, "a")

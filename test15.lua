@@ -1,3 +1,5 @@
+-- Chapter 15. Data Files and Serialization
+
 ---[[
 -- 15.1: Modify the code in Figure 15.2, "Serializing tables without cycles" so that it indents nested tables. (Hint: add an extra parameter to serialize with the indentation string.)
 
@@ -19,7 +21,8 @@ function serialize (o, indent)
     end
 end
 
--- serialize{a=12, b='Lua', key='another "one"', t={a=1, b=2, c=3, t={a=1, b=2}}}
+print("--- 15.1 ---")
+serialize{a=12, b='Lua', key='another "one"', t={a=1, b=2, c=3, t={a=1, b=2}}}
 
 --]]
 
@@ -47,7 +50,8 @@ function serialize (o, indent)
     end
 end
 
--- serialize{a=12, b='Lua', key='another "one"', t={a=1, b=2, c=3, t={a=1, b=2}}}
+print("\n--- 15.2 ---")
+serialize{a=12, b='Lua', key='another "one"', t={a=1, b=2, c=3, t={a=1, b=2}}}
 
 --]]
 
@@ -79,7 +83,8 @@ function serialize (o, indent)
     end
 end
 
--- serialize{a=12, b='Lua', [64]='another "one"', t={a=1, [22]=2, c=3, t={a=1, [true]=2}}}
+print("\n--- 15.3 ---")
+serialize{a=12, b='Lua', [64]='another "one"', t={a=1, [22]=2, c=3, t={a=1, [true]=2}}}
 
 --]]
 
@@ -121,7 +126,8 @@ function serialize (o, indent)
     end
 end
 
--- serialize{a=12, b='Lua', [64]='another "one"', t={14, 15, 19, a=1, [22]=2, c=3, t={21, 22, 23}}}
+print("\n--- 15.4 ---")
+serialize{a=12, b='Lua', [64]='another "one"', t={14, 15, 19, a=1, [22]=2, c=3, t={21, 22, 23}}}
 
 --]]
 
@@ -209,6 +215,7 @@ function save (name, value, saved)
     end
 end
 
+print("\n--- 15.5 ---")
 o = {1, 2, 3}
 a = {{"one", "two"}, 3, o, wtf = o}
 a.copy = a
