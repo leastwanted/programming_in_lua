@@ -1,5 +1,9 @@
+-- Chapter 17. Modules and Packages
+
 ---[[
 -- 17.1: Rewrite the implementation of double-ended queues (Figure 14.2, "A double-ended queue") as a proper module.
+
+print("--- 17.1 ---")
 
 local List = require("test17-1")
 
@@ -21,6 +25,8 @@ end
 
 ---[[
 -- 17.2: Rewrite the implementation of the geometric-region system (the section called "A Taste of Functional Programming") as a proper module.
+
+print("\n--- 17.2 ---")
 
 local Region = require("test17-2")
 
@@ -81,6 +87,8 @@ local function searcher(modname, path)
     end
     return nil
 end
+
+print("\n--- 17.4 ---")
 
 local lua1 = searcher("test17-4", path)
 lua1()
