@@ -27,6 +27,8 @@ factory(a)()
 factory({})
 a = nil
 
+print("--- 23.1 ---")
+
 print_mem()
 collectgarbage()
 print("-----")
@@ -37,6 +39,8 @@ print_mem()
 
 ---[[
 -- 23.2: Consider the first example of the section called "Finalizers", which creates a table with a finalizer that only prints a message when activated. What happens if the program ends without a collection cycle? What happens if the program calls os.exit? What happens if the program ends with an error?
+
+print("\n--- 23.2 ---")
 
 o = {x = "hi"}
 setmetatable(o, {__gc = function (o) print(o.x) end})
@@ -70,6 +74,8 @@ do
     end
 end
 
+print("\n--- 23.3 ---")
+
 local a = factory_string("hello")
 print(a())
 print(factory_string("world")())
@@ -95,6 +101,8 @@ for i = 1, 10000 do
     a[i] = setmetatable({}, mt)
 end
 
+print("\n--- 23.4 ---")
+
 collectgarbage()
 print(collectgarbage("count") * 1024, count)
 a = nil
@@ -110,6 +118,8 @@ print(collectgarbage("count") * 1024, count)
 -- 23.5: For this exercise, you need at least one Lua script that uses lots of memory. If you do not have one, write it. (It can be as simple as a loop creating tables.)
 
 -- Run your script with different values for pause and stepmul. How they affect the performance and memory usage of the script? What happens if you set the pause to zero? What happens if you set the pause to 1000? What happens if you set the step multiplier to zero? What happens if you set the step multiplier to 1000000?
+
+print("\n--- 23.5 ---")
 
 local t = os.clock()
 dofile("test23-mem.lua")

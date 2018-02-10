@@ -21,6 +21,8 @@ function getfield(f)
     return v
 end
 
+print('--- 22.1 ---')
+
 a = {b = {c = 1}}
 d = getfield("a.b.c")
 
@@ -47,6 +49,8 @@ d = getfield("a.b.c")
 
 ---[[
 -- 22.3: Explain in detail what happens in the following program and what it will print.
+
+print('\n--- 22.3 ---')
 
 local print = print
 function foo(_ENV, a)

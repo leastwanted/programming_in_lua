@@ -25,6 +25,8 @@ function send( x )
     coroutine.resume(consumer, x)
 end
 
+print("--- 24.1 ---")
+
 consumer = coroutine.create(consumer)
 
 -- producer()
@@ -63,6 +65,8 @@ function permutations (a)
         return res
     end
 end
+
+print("\n--- 24.2 ---")
 
 for c in permutations({"a", "b", "c"}, 2) do
     printResult(c)
