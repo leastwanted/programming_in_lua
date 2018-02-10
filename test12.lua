@@ -1,3 +1,5 @@
+-- Chapter 12. Date and Time
+
 ---[[
 -- 12.1: Write a function that returns the date-time exactly on month after a given date-time. (Assume the numeric coding of date-time)
 
@@ -7,6 +9,7 @@ local function one_month_passed(t)
     return os.time(t)
 end
 
+print("--- 12.1 ---")
 print(os.date("%Y/%m/%d", one_month_passed(os.time())))
 
 --]]
@@ -20,6 +23,7 @@ local function day_of_week(t)
     return t.wday
 end
 
+print("\n--- 12.2 ---")
 print(string.format("Today is weekday %d", day_of_week(os.time())))
 
 --]]
@@ -40,6 +44,7 @@ local function seconds_passed(t)
     return os.difftime(t, start)
 end
 
+print("\n--- 12.3 ---")
 print(string.format("Seconds passed: %d", seconds_passed(os.time())))
 
 --]]
@@ -59,6 +64,7 @@ local function first_friday(year)
     return os.date("*t", os.time(t))
 end
 
+print("\n--- 12.4 ---")
 local t = first_friday(2018)
 print(string.format("First friday of %d is %d-%d : %d", t.year, t.month, t.day, t.wday))
 
@@ -74,6 +80,7 @@ local function complete_days(t1, t2)
     return math.floor(os.difftime(t2, t1) / (24 * 3600))
 end
 
+print("\n--- 12.5 ---")
 print("Days between:", complete_days({year=2014, month=12, day=16}, {year=2015, month=1, day=1}))
 
 --]]
@@ -88,6 +95,7 @@ local function complete_months(t1, t2)
     return (t2.year - t1.year) * 12 + t2.month - t1.month
 end
 
+print("\n--- 12.6 ---")
 print("Months between:", complete_months({year=2013, month=12, day=16}, {year=2015, month=1, day=1}))
 
 --]]
@@ -108,6 +116,7 @@ local function add_one_day(t)
     return os.time(t)
 end
 
+print("\n--- 12.7 ---")
 local t = os.time({year=2018, month=1, day=31})
 print("Month then day:" .. os.date("%Y/%m/%d", add_one_day(add_one_month(t))))
 
@@ -123,6 +132,8 @@ local function get_timezone()
     local now = os.time()
     return os.difftime(now, os.time(os.date("!*t", now)))
 end
+
+print("\n--- 12.8 ---")
 print("Time zone:", get_timezone())
 
 --]]
