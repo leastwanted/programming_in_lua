@@ -1,7 +1,10 @@
---[[
-lua test11.lua 10 < book.of
+-- Chapter 11. Interlude: Most Frequent Words
 
-]]
+-- lua test11.lua 10 < book.of
+
+-- 11.1: When we apply the word-frequency program to a text, usually the most frequent words are uninteresting small words like articles and prepositions. Change the program so that it ignores words with less than four letters.
+
+-- 11.2: Repeat the previous exercise but, instead of using length as the criterion for ignoring a word, the program should read from a text file a list of words to be ignored.
 
 -- 11.2 read ignore words from a file
 local ignores = {}
