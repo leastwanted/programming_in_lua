@@ -89,7 +89,7 @@ an unbounded call chain with random numbers.
 n = math.random(123456789)
 
 function f ()
-  n = n - 1;                                                                                                                                           
+  n = n - 1;
   if n < 0 then
     return nil
   else
