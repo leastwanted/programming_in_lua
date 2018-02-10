@@ -1,3 +1,5 @@
+-- Chapter 13. Bits and Bytes
+
 -- Need Lua 5.3
 
 ---[[
@@ -18,6 +20,7 @@ local function umod(n, d)
     end
 end
 
+print("--- 13.1 ---")
 local x = 3 << 62
 print(x)
 print(string.format("%u", x))
@@ -39,6 +42,7 @@ local function number_of_bits(x)
     return count
 end
 
+print("\n--- 13.2 ---")
 local x = 3 << 62
 print("Number of bits:", number_of_bits(x))
 
@@ -52,6 +56,7 @@ local function power_of_two(x)
     return x > 0 and ((x & (x - 1)) == 0)
 end
 
+print("\n--- 13.3 ---")
 print("Is Power of two:", power_of_two(1 << 13))
 print("Is Power of two:", power_of_two(((1 << 12) + 32)))
 
@@ -81,6 +86,7 @@ local function hamming_weight2(x)
     return count
 end
 
+print("\n--- 13.4 ---")
 local x = 900012345
 print("Hamming_weight:", hamming_weight(x))
 print("Hamming_weight:", hamming_weight2(x))
@@ -101,6 +107,7 @@ local function is_palindrome(x)
     return true
 end
 
+print("\n--- 13.5 ---")
 local x = 0xFFFFFFFFFFFFFFFF
 print("Is palindrome:", is_palindrome(x))
 print("Is palindrome:", is_palindrome(0xFFFFFFFE7FFFFFFF))
@@ -131,6 +138,7 @@ local function testBit(a, n)
     return a[n] == 1 and true or false
 end
 
+print("\n--- 13.6 ---")
 local a = newBitArray(100)
 setBit(a, 99, false)
 print(testBit(a, 98))
@@ -160,6 +168,8 @@ print(testBit(a, 99))
 --     out:write(packStr)
 -- end
 -- out:close()
+
+print("\n--- 13.7 ---")
 
 local blocksize = #string.pack("iBBBf", 0, 0, 0, 0, 0)
 print("blocksize:", blocksize)
