@@ -4,6 +4,10 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
+/*
+27.1: Compile and run the simple stand-alone interpreter (Figure 27.1, “A bare-bones stand-alone Lua interpreter”).
+*/
+
 int main(void) {
 	char buff[256];
 	int error;
