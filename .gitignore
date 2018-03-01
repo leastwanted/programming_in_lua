@@ -5,3 +5,4 @@ lua-5.1.5.tar.gz
 lua-5.3.4.tar.gz
 */build/
 *.exe
+*.dll

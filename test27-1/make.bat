@@ -13,6 +13,7 @@ GOTO :build
 cmake -H. -Bbuild -G"%GENERATOR%"
 cmake --build build --config Release
 COPY build\Release\lua.exe .
+COPY build\Release\lua53.dll .
 GOTO :end
 
 :clean
